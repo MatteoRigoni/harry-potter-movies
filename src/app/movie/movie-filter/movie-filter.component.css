@@ -1,0 +1,9 @@
+.filter{
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+input {
+    line-height: 1.5em;
+}

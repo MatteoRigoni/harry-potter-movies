@@ -1,0 +1,31 @@
+.movie-subtitle {
+    font-size: 0.7em;
+    color: #666; 
+  }
+.movie-title {
+    font-size: 1em;
+    color: #000000; 
+    font-weight: 700;
+}
+
+.movie-line {
+    display: flex;
+    align-items: center;
+}
+.movie-line-header {
+    flex:1;
+    padding-right: 100px;
+}
+
+button {
+    background-color: #e6e6e6; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    color: #333; 
+    cursor: pointer; 
+  }
+  
+  button:hover {
+    background-color: #c9c9c9; 
+  }

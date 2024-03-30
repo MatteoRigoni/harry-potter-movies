@@ -1,0 +1,48 @@
+<div class="container" *ngIf="this.movieDetail$ | async as movie; else templateError">
+    <a routerLink="" style="text-decoration: none; color: gray">
+        <i class="fa fa-home" style="margin-right: 5px;"></i>
+          Back
+      </a>
+
+    <h2>{{movie.title}}</h2>
+    <div class="content">
+        <div class="header-section">
+            <div class="image-block">
+                <img [src]="movie.poster" alt="">
+            </div>
+            <div class="description-block">
+                <b>Summary:</b> {{movie.summary}}
+            </div>
+        </div>    
+        <div class="detail-section">
+            <div class="detail-text">Details</div>
+            <div  class="detail-line">
+                <div class="detail-title">Box office</div>
+                <div class="detail-value">{{movie.box_office | milionRange}}</div>
+            </div>
+            <div  class="detail-line">
+                <div class="detail-title">Budget</div>
+                <div class="detail-value">{{movie.budget | milionRange}}</div>
+            </div>
+            <div  class="detail-line">
+                <div class="detail-title">Duration</div>
+                <div class="detail-value">{{movie.duration | hourMinute}}</div>
+            </div>
+            <div  class="detail-line">
+                <div class="detail-title">Producers</div>
+                <div class="detail-value">{{movie.producers | spaceArray}}</div>
+            </div>
+            <div  class="detail-line">
+                <div class="detail-title">Cinematographers</div>
+                <div class="detail-value">{{movie.cinematographers | spaceArray}}</div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<ng-template #templateError>
+    <div style="text-align: center; color: red;">
+        <h3>Sorry, something went wrong!</h3>
+        <p>Retry later and verify that link is correct!</p>
+    </div>        
+</ng-template>

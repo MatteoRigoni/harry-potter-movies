@@ -1,0 +1,14 @@
+<div class="movie-line">
+  <div class="movie-line-header">
+    <div class="movie-title">{{movie?.title}}</div>
+    <div class="movie-subtitle">
+      Relese date: {{movie.release_date | date:'yyyy-MM-dd'}} &nbsp;&nbsp;
+      Budget: {{movie.budget | milionRange}} &nbsp;&nbsp;
+      Duration: {{ movie.duration | hourMinute }}
+    </div>
+  </div>
+  <div style="margin-left:auto;">
+    <button routerLink="/movie/{{ movie.id }}">Details</button>
+  </div>
+
+</div>

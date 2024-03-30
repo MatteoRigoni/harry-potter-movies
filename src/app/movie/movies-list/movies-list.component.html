@@ -1,0 +1,19 @@
+<div class="container">  
+    <app-movie-filter (filterChange)="filterMovies($event)"></app-movie-filter>
+    <br>
+    <hr>
+    
+    <ul *ngIf="filteredMovies; else templateError">
+        <li *ngFor="let movie of filteredMovies">
+            <app-movie-item  [movie]="movie" ></app-movie-item>
+            <br/>
+        </li>
+    </ul>
+
+    <ng-template #templateError>
+        <div style="text-align: center; color: red;">
+            <h3>Sorry, something went wrong!</h3>
+            <p>Retry later</p>
+        </div>        
+    </ng-template>
+</div>
